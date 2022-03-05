@@ -4,7 +4,7 @@ print(round(4.4))
 print(floor(4.6))
 phrase=["hello my name is Rebecca"]
 print(phrase[6:])
-friends=["元","熊","余"]
+friends=["元","熊","余", "dDDD"]
 
 phrase.extend(friends)
 print(phrase)
