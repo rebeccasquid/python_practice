@@ -10,3 +10,6 @@ print(res)
 
 dic={"a":"apple"}
 print(dic["a"])
+
+dic={"b":"banana"}
+print(dic['b'])
