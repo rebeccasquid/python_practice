@@ -18,7 +18,7 @@ def printGuessTip(num, guesses):
         else:
             print('正確答案你比猜測的數字小')
 
-printGuessTip(10,[8])
+# printGuessTip(10,[8])
 
 while True:
 
