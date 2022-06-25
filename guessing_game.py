@@ -9,7 +9,7 @@ def printGuessTip(num, guesses):
         if abs(num-guesses[-1]) < abs(num-guesses[-2]):
             print('你猜測的數字比上一次猜測距離正確答案”更接近“了呢')
         elif abs(num-guesses[-1]) == abs(num-guesses[-2]):
-            print('你兩次都猜一樣的數字 請嘗試猜測不同的數字')
+            print('你猜測的數字比上一次猜測距離正確答案”是一樣的“')
         else:
             print('你猜測的數字比上一次猜測距離正確答案“更遠”了呢')
     else:
@@ -22,8 +22,14 @@ def printGuessTip(num, guesses):
 
 while True:
 
+    # make sure input is a valid number
+    inputText = input("I'm thinking of a number between 1 and 100.\n  What is your guess? ")
+    if str.isdigit(inputText) == False :
+        print('Please try the valid integer ')
+        continue
+
     # we can copy the code from above to take an input
-    guess = int(input("I'm thinking of a number between 1 and 100.\n  What is your guess? "))
+    guess = int(inputText)
     
     if guess < 1 or guess > 100:
         print('OUT OF BOUNDS! Please try again: ')
