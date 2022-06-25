@@ -5,19 +5,20 @@ guesses = [0]
 def printGuessTip(num, guesses):
     # 拿當前的猜測數字跟前一次猜測數字作比較較接近顯示 WARMER, 叫遠離顯示COLDER
     # 如果這是第一次猜測, 根據第一次猜測給予提示往上猜或是往下猜
-    if guesses[-2]:  
-        if abs(num-guess) < abs(num-guesses[-2]):
-            print('你猜測的數字比上一次猜測更接近了')
-        elif abs(num-guess) == abs(num-guesses[-2]):
-            print('Try different guess')
+    if len(guesses)>=2 and guesses[-2]:  
+        if abs(num-guesses[-1]) < abs(num-guesses[-2]):
+            print('你猜測的數字比上一次猜測距離正確答案”更接近“了呢')
+        elif abs(num-guesses[-1]) == abs(num-guesses[-2]):
+            print('你兩次都猜一樣的數字 請嘗試猜測不同的數字')
         else:
-            print('COLDER than previous guess!!')
+            print('你猜測的數字比上一次猜測距離正確答案“更遠”了呢')
     else:
-        if num-guess > 0:
-            print('try higher number!')
+        if num-guesses[-1] > 0:
+            print('正確答案你比猜測的數字大')
         else:
-            print('try lower number!')
+            print('正確答案你比猜測的數字小')
 
+printGuessTip(10,[8])
 
 while True:
 
